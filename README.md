@@ -1,2 +1,3 @@
 For my project plan, I created an Assignment Tracking Website. This website helps students keep track of their school work in one place. Students can add their assignments, view them, update the details, and delete them when they are no longer needed.
 The website lets users enter basic information like the assignment name, course, due date, status, and description. This makes it easier for students to stay organized and remember their deadlines. The goal of this project is to help students manage their time better and reduce stress from forgetting assignments.
+For my custom CSS page, I just override the body section with a simple purple colour
