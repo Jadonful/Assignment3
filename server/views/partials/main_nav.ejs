@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Assignment Tracker</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <!-- Home -->
+<li class="nav-item">
+  <% if (title === 'Home') { %>
+    <a class="nav-link active" href="/home">
+      <i class="fa-solid fa-house"></i> Home
+    </a>
+  <% } else { %>
+    <a class="nav-link" href="/home">
+      <i class="fa-solid fa-house"></i> Home
+    </a>
+  <% } %>
+</li>
+
+<!-- Add Assignment -->
+<li class="nav-item">
+  <% if (title === 'Add Assignment') { %>
+    <a class="nav-link active" href="/assignments/add">
+      <i class="fa-solid fa-plus"></i> Add Assignment
+    </a>
+  <% } else { %>
+    <a class="nav-link" href="/assignments/add">
+      <i class="fa-solid fa-plus"></i> Add Assignment
+    </a>
+  <% } %>
+</li>
+
+<!-- Assignments List -->
+<li class="nav-item">
+  <% if (title === 'Assignments') { %>
+    <a class="nav-link active" href="/assignments">
+      <i class="fa-solid fa-list-check"></i> Assignments
+    </a>
+  <% } else { %>
+    <a class="nav-link" href="/assignments">
+      <i class="fa-solid fa-list-check"></i> Assignments
+    </a>
+  <% } %>
+</li>
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,84 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<div class="container mt-4">
+
+  <!-- Page title -->
+  <h2>Assignments</h2>
+
+  <!-- Button to go to the Add Assignment page -->
+  <a href="/assignments/add" class="btn btn-primary mb-3">
+    Add Assignment
+  </a>
+
+  <!-- Check if no assignments exist -->
+  <% if (assignments.length === 0) { %>
+
+    <!-- Message if no data is found -->
+    <p>No assignments found.</p>
+
+  <% } else { %>
+
+  <!-- Table to display all assignments -->
+  <table class="table table-bordered">
+
+    <!-- Table headings -->
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Course</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <!-- Table body -->
+    <tbody>
+
+      <!-- Loop through each assignment -->
+      <% assignments.forEach(a => { %>
+        <tr>
+
+          <!-- Show assignment title -->
+          <td><%= a.title %></td>
+
+          <!-- Show course name -->
+          <td><%= a.course %></td>
+
+          <!-- Show formatted due date -->
+          <td><%= new Date(a.dueDate).toDateString() %></td>
+
+          <!-- Show status -->
+          <td><%= a.status %></td>
+
+          <!-- Show description -->
+          <td><%= a.description %></td>
+
+          <!-- Action buttons -->
+          <td>
+
+            <!-- Edit button -->
+            <a href="/assignments/edit/<%= a._id %>" class="btn btn-warning btn-sm">
+              Edit
+            </a>
+
+            <!-- Delete button -->
+            <a href="/assignments/delete/<%= a._id %>" class="btn btn-danger btn-sm">
+              Delete
+            </a>
+
+          </td>
+        </tr>
+      <% }) %>
+
+    </tbody>
+  </table>
+
+  <% } %>
+
+</div>
+
+<%- include ../partials/footer.ejs %>
+

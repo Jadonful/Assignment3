@@ -1,0 +1,29 @@
+<%- include ./partials/header.ejs %>
+<%- include ./partials/main_nav.ejs %>
+
+<div class="container mt-5 text-center">
+  <!-- Main page heading -->
+  <h1 class="display-4 mb-3">Assignment Tracker</h1>
+
+  <!-- Short description -->
+  <p class="lead mb-4">
+    Manage your school work, keep track of due dates, and stay organized easily.
+  </p>
+
+  <!-- Buttons section -->
+  <div class="d-flex justify-content-center gap-3">
+
+    <!-- Button to view assignments -->
+    <a href="/assignments" class="btn btn-primary btn-lg">
+      <i class="fa-solid fa-list-check"></i> View Assignments
+    </a>
+
+    <!-- Button to add a new assignment -->
+    <a href="/assignments/add" class="btn btn-success btn-lg">
+      <i class="fa-solid fa-plus"></i> Add Assignment
+    </a>
+
+  </div>
+</div>
+
+<%- include ./partials/footer.ejs %>

@@ -1,0 +1,5 @@
+/* Overrides the existing page colour */
+body {
+  background-color: #2e004f !important;
+  color: #ffffff !important;
+}

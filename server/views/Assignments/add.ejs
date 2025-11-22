@@ -1,0 +1,79 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<div class="container mt-4">
+  <!-- Page title -->
+  <h2>Add Assignment</h2>
+
+  <!-- Show error message if there is one -->
+  <% if (typeof error !== 'undefined' && error) { %>
+    <div class="alert alert-danger"><%= error %></div>
+  <% } %>
+
+  <!-- Form to add a new assignment -->
+  <form method="POST" action="/assignments/add">
+
+    <!-- Assignment title input -->
+    <div class="mb-3">
+      <label class="form-label">Assignment Title</label>
+      <input 
+        type="text"
+        name="title"
+        class="form-control"
+        placeholder="Enter assignment title"
+        required
+      />
+    </div>
+
+    <!-- Course name input -->
+    <div class="mb-3">
+      <label class="form-label">Course Name</label>
+      <input 
+        type="text"
+        name="course"
+        class="form-control"
+        placeholder="Enter course name"
+        required
+      />
+    </div>
+
+    <!-- Due date input -->
+    <div class="mb-3">
+      <label class="form-label">Due Date</label>
+      <input 
+        type="date"
+        name="dueDate"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <!-- Status dropdown -->
+    <div class="mb-3">
+      <label class="form-label">Status</label>
+      <select name="status" class="form-select">
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+
+    <!-- Description text area -->
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea 
+        name="description"
+        class="form-control"
+        placeholder="Enter assignment description"
+      ></textarea>
+    </div>
+
+    <!-- Submit and Cancel buttons -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/assignments" class="btn btn-warning">Cancel</a>
+
+  </form>
+</div>
+
+
+
+<%- include ../partials/footer.ejs %>
